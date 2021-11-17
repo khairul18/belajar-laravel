@@ -1,54 +1,20 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+namespace App\Models;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// use Illuminate\Database\Eloquent\Factories\HasFactory;
+// use Illuminate\Database\Eloquent\Model;
 
+// class Post extends Model
+// {
+//     use HasFactory;
+// }
 
-Route::get('/', function () {
-    return view('home', [
-        "name" => "Khairul Ariandi Rida",
-        "title" => "Home"
-    ]);
+class Post 
+{
 
-});
-
-Route::get('about', function () {
-    return view('about', [
-        "name" => "Khairul Ariandi Rida",
-        "title" => "About"
-    ]);
-
-});
-
-
-Route::get('article', function () {
-
-    $type_cars = [
-        
-    ];
-
-    return view('article', [
-        "name" => "Khairul Ariandi Rida",
-        "title" => "Article",
-        "posts" => $type_cars
-    ]);
-
-});
-
-Route::get('{slug}', function ($slug) {
-
-    $type_cars = [
-        [
+    private static $type_cars = [
+         [
         "title" => "first title",
         "slug" => "first-title",
         "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repellat ipsa blanditiis quaerat minima, 
@@ -68,21 +34,4 @@ Route::get('{slug}', function ($slug) {
         labore voluptatibus impedit!"
         ]
     ];
-
-    $new_car = [];
-
-    foreach ($type_cars as $car) {
-        if ($car["slug"] === $slug) {
-            $new_car = $car;
-        }
-    }
-
-
-    return view('post', [
-        "name" => "Khairul Ariandi Rida",
-        "title" => $slug,
-        "post" => $new_car
-
-    ]);
-
-});
+}
