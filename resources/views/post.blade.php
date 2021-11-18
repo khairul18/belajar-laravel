@@ -6,8 +6,8 @@
 
 @section('body')
 <article class="mt-4">
-  <h2 class="mb-3">{{ $post["title"] }}</h2>
-  <p> {{ $post["body"] }}</p>
+  <h2 class="mb-3">{{ $p_post["title"] }}</h2>
+  <p> {{ $p_post["body"] }}</p>
 
   <a  href="/article" class="btn btn-dark"  >back</a> 
 

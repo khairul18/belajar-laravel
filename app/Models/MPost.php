@@ -10,7 +10,7 @@ namespace App\Models;
 //     use HasFactory;
 // }
 
-class Post 
+class MPost 
 {
 
     private static $type_cars = [
@@ -34,4 +34,26 @@ class Post
         labore voluptatibus impedit!"
         ]
     ];
+
+    public static function all()
+    {
+        return collect(self::$type_cars);  
+    }
+
+    public static function find($glu)
+
+    {
+    
+        $type_cars = static::all();
+
+        // $new_car = [];
+
+        // foreach ($type_cars as $car) {
+        //     if ($car["slug"] === $glu) {
+        //         $new_car = $car;
+        //     }
+        // }
+        return $type_cars->firstwhere('slug', $glu);
+
+    }
 }
