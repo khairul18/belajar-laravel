@@ -2,29 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MPost;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {   
+    
     public function index()
     {
         return view('article', [
             "name" => "Khairul Ariandi Rida",
             "title" => "Article",
-            "posts" => MPost::all()
+            "posts" => Post::all()
         ]);
     }
 
-    public function subArticle($slug)
+    public function subArticle(Post $post)
     {
         return view('post', [
             "name" => "Khairul Ariandi Rida",
-            "title" => $slug,
-            "p_post" => MPost::find($slug)
+            "title" => $post->title,//print (Post::find($id->get('title'))),
+            "p_post" => $post
             
         ]);
+
     }
     //
 }

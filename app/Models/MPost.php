@@ -40,6 +40,8 @@ class MPost
         return collect(self::$type_cars);  
     }
 
+    
+
     public static function find($glu)
 
     {

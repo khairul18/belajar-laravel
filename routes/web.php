@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\PostController;
-use App\Models\MPost;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,4 +34,4 @@ Route::get('about', function () {
 
 Route::get('article', [PostController::class, 'index']);
 
-Route::get('{slug}', [PostController::class, 'subArticle']);
+Route::get('{post:slug}', [PostController::class, 'subArticle']);

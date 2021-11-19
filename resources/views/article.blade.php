@@ -11,10 +11,12 @@
     
 @foreach ($posts as $type) 
 <article class="mt-5">
-<h2>
-    <a href="/{{ $type["slug"] }}">{{ $type["title"] }} </a>
+<h2 class="mb-3">
+    <a class="text-dark" href="/{{ $type->slug  }}">{{ strtoupper($type->title) }} </a>
 </h2>
-<p>{{ $type["body"] }}</p>    
+<p>{{ $type->excerpt  }} <a href="/{{ $type->slug  }}">more</a></p>    
+<br>
+<hr> 
 </article>
 
 
